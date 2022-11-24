@@ -10,9 +10,15 @@
   <body>
     <div class="wrapper">
       <header>
-        <img class="logo" src="/images/logo.svg" alt="logo" />
+        <img class="logo" src="images/logo.svg" alt="logo" />
         <nav>
-          <ul>
+          <ul class="slider">
+            <img
+              onClick="closeBar();"
+              class="close-menu"
+              src="images/icon-menu-close.svg"
+              alt="close-menu"
+            />
             <li><a href="#">home</a></li>
             <li><a href="#">new</a></li>
             <li><a href="#">popular</a></li>
@@ -20,12 +26,17 @@
             <li><a href="#">categories</a></li>
           </ul>
         </nav>
-        <img src="/images/icon-menu.svg" alt="menu" />
+        <img
+          onClick="openBar();"
+          class="open-menu"
+          src="images/icon-menu.svg"
+          alt="menu"
+        />
       </header>
       <main class="parent">
         <img
           class="hero-image"
-          src="/images/image-web-3-mobile.jpg"
+          src="images/image-web-3-mobile.jpg"
           alt="hero image"
         />
         <h1>The Bright Future of Web 3.0?</h1>
@@ -65,7 +76,7 @@
         <div class="news">
           <img
             class="retro-pc"
-            src="/images/image-retro-pcs.jpg"
+            src="images/image-retro-pcs.jpg"
             alt="retor pc"
           />
           <div class="content">
@@ -77,7 +88,7 @@
         <div class="news">
           <img
             class="retro-pc"
-            src="/images/image-top-laptops.jpg"
+            src="images/image-top-laptops.jpg"
             alt="retor pc"
           />
           <div class="content">
@@ -89,7 +100,7 @@
         <div class="news">
           <img
             class="retro-pc"
-            src="/images/image-gaming-growth.jpg"
+            src="images/image-gaming-growth.jpg"
             alt="retor pc"
           />
           <div class="content">
@@ -99,6 +110,22 @@
           </div>
         </div>
       </footer>
+      <div class="layer"></div>
     </div>
+    <script>
+      const open = document.querySelector(".slider");
+      const close = document.querySelector(".slider");
+      const layer = document.querySelector(".layer");
+
+      function openBar() {
+        open.classList.add("nav-open");
+        layer.classList.add("layer-up");
+      }
+
+      function closeBar() {
+        close.classList.remove("nav-open");
+        layer.classList.remove("layer-up");
+      }
+    </script>
   </body>
 </html>

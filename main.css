@@ -20,7 +20,6 @@ body{
     padding:1em;
 }
 
-
 /*navbar section*/
 
 header {
@@ -30,13 +29,9 @@ header {
     margin-bottom:2em;
 }
 
-nav ul {
-    display:flex;
-}
-
 nav ul li a{
     text-decoration:none;
-    color:var(--dark-gray);
+    color:var(--blue);
 }
 
 nav ul li a:hover{
@@ -47,10 +42,58 @@ nav ul li a:hover{
     width:3em;
 }
 
+/*animation part*/
+
 nav ul{
     list-style-type:none;
     text-transform:capitalize;
-    display:none;
+    padding:9em 0em 0em 1em;
+    position:fixed;
+    top:0;
+    right:0;
+    width:70%;
+    z-index:10;
+    height:100vh;
+    background-color:var(--white);
+    font-size:1.3rem;
+    transform:translateX(100%);
+}
+
+.open-menu{
+    cursor:pointer;
+}
+
+.nav-open{
+    transition:800ms ease-in;
+    transform:translateX(0%);
+}
+
+nav ul li{
+    margin-bottom:1em;
+}
+
+.close-menu{
+    position:fixed;
+    top:0;
+    right:0;
+    margin:1.5em 1em 0 0;
+    cursor:pointer;
+}
+
+.layer{
+    background-color:black;
+    opacity:0;
+    visibility:hidden;
+    top:0;
+    right:0;
+    width:100%;
+    height:100vh;
+    position:fixed;
+}
+
+.layer-up{
+    opacity:0.8;
+    visibility:visible;
 }
 
 /*main content*/
@@ -131,7 +174,6 @@ main .features{
     padding-top: 2em ;
 }
 
-
 /*footer*/
 .news {
     display:flex;
@@ -145,8 +187,6 @@ main .features{
    width:100px;
    overflow:hidden;
 }
-
-
 
 .news .content h2{
     color:var(--gray);
@@ -174,19 +214,33 @@ main .features{
 
 
 
-@media(min-width:900px){
+@media(min-width:700px){
+    
+    nav ul li{
+        margin-bottom:0em;
+    }
+    
+    .close-menu{
+        display:none;
+    }
+
     nav ul{
         list-style-type:none;
         text-transform:capitalize;
         display:flex;
-        
+        position:unset;
+        transform:translateX(0%);
+        width:auto;
+        height:auto;
+        padding:0;
+        font-size:1rem;
     }
 
     nav ul li{
         padding-left:2.5em;
     }
 
-    header img[src="/images/icon-menu.svg"]{
+    header img[src="images/icon-menu.svg"]{
         display:none;
     }
 
@@ -216,8 +270,8 @@ main .features{
         gap:1.5em;
     }
 
-    .parent img[src="/images/image-web-3-mobile.jpg"]{
-        content: url("/images/image-web-3-desktop.jpg");
+    .parent img[src="images/image-web-3-mobile.jpg"]{
+        content: url("images/image-web-3-desktop.jpg");
         grid-column:1/3;
     }
 
